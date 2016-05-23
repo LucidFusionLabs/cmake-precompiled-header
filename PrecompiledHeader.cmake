@@ -128,7 +128,7 @@ function(target_use_precompiled_header _target _input)
     elseif(USE_PRECOMPILED_HEADERS)
       set(_pch_compile_flags /I ${_pch_binary_dir})
     endif()
-    target_compile_options(${_target} PUBLIC ${_pch_compile_flags})
+    target_compile_options(${_target} PRIVATE ${_pch_compile_flags})
 
   elseif(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang"
          OR CMAKE_CXX_COMPILER_ID MATCHES "Apple")
@@ -142,7 +142,7 @@ function(target_use_precompiled_header _target _input)
     elseif(USE_PRECOMPILED_HEADERS)
       set(_pch_compile_flags -I${_pch_binary_dir})
     endif()
-    target_compile_options(${_target} PUBLIC ${_pch_compile_flags})
+    target_compile_options(${_target} PRIVATE ${_pch_compile_flags})
   
   else()
     message(FATAL_ERROR "Unknown compiler ${CMAKE_CXX_COMPILER_ID}")
