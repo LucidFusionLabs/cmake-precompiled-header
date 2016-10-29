@@ -8,7 +8,7 @@
 #       [COMPILE_DEFINITIONS]
 #       [INCLUDE_DIRECTORIES])
 #
-#   use_precompiled_header(target root/path/to/pchheader.h
+#   target_use_precompiled_header(target root/path/to/pchheader.h
 #       [FORCEINCLUDE])
 #
 # Options:
